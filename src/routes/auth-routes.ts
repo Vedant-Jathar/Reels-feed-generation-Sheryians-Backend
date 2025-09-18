@@ -1,10 +1,14 @@
 import Router from "express"
-import { login, logout, register } from "../controllers/auth.controller"
+import { loginUser, logoutUser, registerUser, registerFoodPartner, loginFoodPartner, logoutFoodPartner } from "../controllers/auth.controller"
 
 const router = Router()
 
-router.post("/register", register)
-router.post("/login", login)
-router.post("/logout", logout)
+router.post("/register", registerUser)
+router.post("/login", loginUser)
+router.get("/logout", logoutUser)
+
+router.post("/register-food-partner", registerFoodPartner)
+router.post("/login-food-partner", loginFoodPartner)
+router.post("/logout-food-partner", logoutFoodPartner)
 
 export default router
